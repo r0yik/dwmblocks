@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sleep 5
+sleep 3
 
 update=$(checkupdates | wc -l)
 echo "$update"
