@@ -7,11 +7,11 @@ static const Block blocks[] = {
     
 	{"CPU_Temp:", "~/.local/src/suckless/dwmblocks/scripts/cpu_temp", 5, 0},
 
-	{"Mem:", "~/.local/src/suckless/dwmblocks/scripts/memory", 5, 0},
+	{"RAM:", "~/.local/src/suckless/dwmblocks/scripts/memory", 5, 0},
 
-	{"Disk:", "~/.local/src/suckless/dwmblocks/scripts/disk", 60, 0},
+	{"DISK:", "~/.local/src/suckless/dwmblocks/scripts/disk", 60, 0},
 
-	{"Bat:", "~/.local/src/suckless/dwmblocks/scripts/battery", 5, 0},
+	{"BAT:", "~/.local/src/suckless/dwmblocks/scripts/battery", 5, 0},
     
 	{"", "~/.local/src/suckless/dwmblocks/scripts/timedate", 5, 0},
 };
