@@ -15,9 +15,11 @@ static const Block blocks[] = {
 
 	{"⏱ ", "~/.local/src/suckless/dwmblocks/scripts/uptime", 30, 0},
 
+    {"⚛ ", "uname -r", 0, 0},
+
 	{"🕒 ", "~/.local/src/suckless/dwmblocks/scripts/timedate", 5, 0},
 };
 
 //sets delimeter between status commands. NULL character ('\0') means no delimeter.
-static char delim[] = " | ";
+static char delim[] = " << ";
 static unsigned int delimLen = 5;
