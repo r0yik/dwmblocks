@@ -1,27 +1,8 @@
-#!/usr/bin/perl
+#!/bin/bash
 
-use strict;
-use utf8;
-
-my $cpu_usage = -1;
-my $decimals = $ENV{DECIMALS} // 2;
-my $label = $ENV{LABEL} // "";
-
-$ENV{LC_ALL}="en_US";
-open (MPSTAT, 'mpstat 1 1 |') or die;
-while (<MPSTAT>) {
-    if (/^.*\s+(\d+\.\d+)[\s\x00]?$/) {
-        $cpu_usage = 100 - $1;
-        last;
-    }
+cpu_usage () {
+cpu_idle=`top -b -n 1 | grep Cpu | awk '{print $8}'|cut -f 1 -d "."`
+cpu_use=`expr 100 - $cpu_idle`
+echo "$cpu_use%"
 }
-close(MPSTAT);
-
-$cpu_usage eq -1 and die 'Can\'t find CPU information';
-
-print "${label}";
-printf "%.${decimals}f%%\n", $cpu_usage;
-print "${label}";
-printf "%.${decimals}f%%\n", $cpu_usage;
-
-exit 0;
+cpu_usage
